@@ -1,8 +1,5 @@
 # Environment files
-# .env
-# .env.local
-# .env.production
-# backend/.env
+# .env files are included for easy setup (example project only)
 
 # Node modules
 frontend/node_modules/

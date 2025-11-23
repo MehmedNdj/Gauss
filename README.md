@@ -1,7 +1,6 @@
-# vibecode-full-stack-starter-kit - Full-Stack Development Environment
+# Gauss - Full-Stack Development Environment
 
-Generated on: Thu Sep  4 01:37:12 PM EEST 2025
-Location: /home/softart/scripts/vibecode-full-stack-starter-kit
+A powerful full-stack application for tool management and collaboration.
 
 ## 🚀 Tech Stack
 
@@ -38,7 +37,7 @@ Location: /home/softart/scripts/vibecode-full-stack-starter-kit
 ## 📁 Project Structure
 
 ```
-vibecode-full-stack-starter-kit/
+Gauss/
 ├── frontend/             # Next.js application
 │   ├── src/             # Source code
 │   ├── public/          # Static assets
@@ -53,15 +52,13 @@ vibecode-full-stack-starter-kit/
 │   └── composer.json    # Backend dependencies
 ├── nginx/              # Nginx configuration
 ├── docker/             # Docker configurations
-├── mysql/init/         # Database initialization
-├── tools/              # Development utilities
 ├── docker-compose.yml  # Container orchestration
 └── README.md          # This documentation
 ```
 
 ## 🐳 Docker Services
 
-All services are isolated with unique names: `vibecode-full-stack-starter-kit_*`
+All services are isolated with unique names: `gauss_*`
 
 - **frontend** - Next.js development server
 - **backend** - Nginx reverse proxy
@@ -116,20 +113,20 @@ docker compose logs php_fpm -f
 ./db-manage.sh redis
 
 # Direct MySQL access
-docker compose exec mysql mysql -u root -pvibecode-full-stack-starter-kit_mysql_pass vibecode-full-stack-starter-kit_app
+docker compose exec mysql mysql -u root -pgauss_mysql_pass gauss_app
 ```
 
 ## 🔐 Database Configuration
 
 **MySQL Credentials:**
 - Host: mysql (internal) / localhost:8203 (external)
-- Database: vibecode-full-stack-starter-kit_app
+- Database: gauss_app
 - Username: root
-- Password: vibecode-full-stack-starter-kit_mysql_pass
+- Password: gauss_mysql_pass
 
 **Redis Configuration:**
-- Host: redis (internal) / localhost:8204 (external)  
-- Password: vibecode-full-stack-starter-kit_redis_pass
+- Host: redis (internal) / localhost:8204 (external)
+- Password: gauss_redis_pass
 
 ## 🛠️ Troubleshooting
 
@@ -178,8 +175,18 @@ To update the environment:
 1. Pull latest images: `docker compose pull`
 2. Rebuild services: `docker compose up -d --build`
 
+## 🚧 Future Updates
+
+### Workbenches Feature
+A collaborative workspace feature is planned for future releases, enabling:
+
+- **Channel Creation**: Users will be able to create dedicated channels similar to Discord, organizing conversations by topics or projects
+- **Real-time Communication**: Built-in text messaging system for seamless team collaboration within channels
+- **Tool Exchange**: Easy sharing and distribution of tools between users directly through the platform
+- **Collaborative Workspaces**: Team members can work together in shared environments, exchanging resources and knowledge efficiently
+
+This feature will transform Gauss into a comprehensive collaboration platform, combining tool management with real-time communication and resource sharing.
+
 ---
 
-**Generated with create-fullstack-env.sh**  
-**Project ID**: vibecode-full-stack-starter-kit  
-**Created**: Thu Sep  4 01:37:12 PM EEST 2025
+**Gauss - Full-Stack Development Environment**
