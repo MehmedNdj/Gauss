@@ -32,7 +32,7 @@ class AuthController extends Controller
         $user->settings()->create([]);
 
         // Create default collections
-        $defaultCollections = ['All', 'Frontend', 'Backend', 'Design', 'DevOps', 'Testing'];
+        $defaultCollections = ['All', 'Favourites'];
         foreach ($defaultCollections as $name) {
             $user->collections()->create([
                 'name' => $name,
@@ -80,7 +80,7 @@ class AuthController extends Controller
 
         // Create default collections if they don't exist
         if ($user->collections()->count() === 0) {
-            $defaultCollections = ['All', 'Frontend', 'Backend', 'Design', 'DevOps', 'Testing'];
+            $defaultCollections = ['All', 'Favourites'];
             foreach ($defaultCollections as $name) {
                 $user->collections()->create([
                     'name' => $name,

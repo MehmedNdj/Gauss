@@ -15,8 +15,14 @@ class CollectionController extends Controller
         $collections = $request->user()->collections()
             ->with('tools')
             ->withCount('tools')
-            ->latest()
-            ->get();
+            ->get()
+            ->sortBy(function($collection) {
+                // Custom order: All first, then Favourites, then others
+                if ($collection->name === 'All') return 0;
+                if ($collection->name === 'Favourites') return 1;
+                return 2;
+            })
+            ->values();
 
         return response()->json($collections);
     }

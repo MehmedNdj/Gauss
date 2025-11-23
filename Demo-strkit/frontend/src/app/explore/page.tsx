@@ -59,23 +59,30 @@ export default function ExplorePage() {
 
   const handleAddTool = async (tool: ExploreTool) => {
     try {
+      const toolData = {
+        name: tool.name,
+        description: tool.description,
+        rating: tool.rating,
+        version: tool.version,
+        image_url: tool.image_url,
+        roles: tool.roles,
+      };
+      console.log('Sending tool data:', toolData);
+
       const response = await apiCall('/tools', {
         method: 'POST',
-        body: JSON.stringify({
-          name: tool.name,
-          url: `https://${tool.name.toLowerCase().replace(/\s+/g, '')}.com`,
-          description: tool.description,
-          category: tool.category,
-          tags: tool.roles.join(', '),
-          is_favorite: false,
-        }),
+        body: JSON.stringify(toolData),
       });
 
       if (response.ok) {
         alert(`${tool.name} has been added to your tools!`);
+        // Optionally, redirect to dashboard or refresh
+        // router.push('/dashboard');
       } else {
-        console.error('Failed to add tool');
-        alert('Failed to add tool. Please try again.');
+        const errorData = await response.json();
+        console.error('Failed to add tool - Full error:', errorData);
+        console.error('Validation errors:', errorData.errors);
+        alert(`Failed to add tool: ${JSON.stringify(errorData.errors || errorData.message || 'Unknown error')}`);
       }
     } catch (error) {
       console.error('Error adding tool:', error);
