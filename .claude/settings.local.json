@@ -7,7 +7,10 @@
       "Bash(docker compose exec:*)",
       "Bash(docker compose:*)",
       "Bash(php -l:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)"
     ],
     "deny": [],
     "ask": []
