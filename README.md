@@ -113,20 +113,20 @@ docker compose logs php_fpm -f
 ./db-manage.sh redis
 
 # Direct MySQL access
-docker compose exec mysql mysql -u root -pgauss_mysql_pass gauss_app
+docker compose exec mysql mysql -u root -pvibecode-full-stack-starter-kit_mysql_pass vibecode-full-stack-starter-kit_app
 ```
 
 ## 🔐 Database Configuration
 
 **MySQL Credentials:**
 - Host: mysql (internal) / localhost:8203 (external)
-- Database: gauss_app
+- Database: vibecode-full-stack-starter-kit_app
 - Username: root
-- Password: gauss_mysql_pass
+- Password: vibecode-full-stack-starter-kit_mysql_pass
 
 **Redis Configuration:**
 - Host: redis (internal) / localhost:8204 (external)
-- Password: gauss_redis_pass
+- Password: vibecode-full-stack-starter-kit_redis_pass
 
 ## 🛠️ Troubleshooting
 
